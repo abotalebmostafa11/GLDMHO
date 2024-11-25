@@ -45,7 +45,7 @@ git clone https://github.com/abotalebmostafa11/GLDMHO
  ## Data Format
 The default input data is expected to be in a file named input.txt. The data structure should follow the format below, which is exemplified using an NDVI dataset:
 
-| **Data**  **15      1**  |
+| **Data**  | **15      1**  |
 |-----------|----------------|
 | 1         | 0.2950428571   |
 | 2         | 0.3935857143   |
