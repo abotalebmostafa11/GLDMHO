@@ -144,6 +144,14 @@ run("input.txt")
 **output.txt:** Open the file to review model evaluations and performance metrics. This file provides insights into the accuracy and efficiency of the GLDM model applied to your data.
 
 
+![mainscheme](https://github.com/user-attachments/assets/a0e37ee1-09e6-4481-9e72-09257e711677)
+
+![GLDMest](https://github.com/user-attachments/assets/592be036-9b45-4c5e-b526-221fc1367eb6)
+
+![WLDM](https://github.com/user-attachments/assets/94928ea8-bad6-4a80-bb66-ba0aec8c4271)
+
+
+
 ## License
 
 © 2024 Author: Mostafa Abotaleb
@@ -169,5 +177,7 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTH
 
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </pre>
+
+
 
 ```bash
