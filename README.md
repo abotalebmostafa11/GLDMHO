@@ -45,23 +45,23 @@ git clone https://github.com/abotalebmostafa11/GLDMHO
  ## Data Format
 The default input data is expected to be in a file named input.txt. The data structure should follow the format below, which is exemplified using an NDVI dataset:
 
-| **Data**  | **15      1**  |
-|-----------|----------------|
-| 1         | 0.2950428571   |
-| 2         | 0.3935857143   |
-| 3         | 0.5285714286   |
-| 4         | 0.6218285714   |
-| 5         | 0.6637285714   |
-| 6         | 0.6701142857   |
-| 7         | 0.6759714286   |
-| 8         | 0.6935285714   |
-| 9         | 0.6907857143   |
-| 10        | 0.6777857143   |
-| 11        | 0.6159142857   |
-| 12        | 0.5291714286   |
-| 13        | 0.4574714286   |
-| 14        | 0.4132         |
-| 15        | 0.3973         |
+|**Data:**  **15      1**    |
+|----------------------------|
+|0.2950428571                |
+|0.3935857143                |
+|0.5285714286                |
+|0.6218285714                |
+|0.6637285714                |
+|0.6701142857                |
+|0.6759714286                |
+|0.6935285714                |
+|0.6907857143                |
+|0.6777857143                |
+|0.6159142857                |
+|0.5291714286                |
+|0.4574714286                |
+|0.4132                      |
+|0.3973                      |
 
 
 Explanation:
@@ -108,7 +108,7 @@ Here's a step-by-step example to demonstrate how to use AbotalebGLDM:
 1. Prepare input.txt
 Create a file named input.txt in the same directory as your script with the following content:
 
-| **Data:**  **15      1**   |
+|**Data:**  **15      1**    |
 |----------------------------|
 |0.2950428571                |
 |0.3935857143                |
