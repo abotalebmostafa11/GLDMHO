@@ -141,10 +141,12 @@ run("input.txt")
 3. Review the Outputs
 **Figures:** Check the generated visualizations in your directory. These may include plots of the original time series, forecasted values, and residuals.
 
+
 **output.txt:** Open the file to review model evaluations and performance metrics. This file provides insights into the accuracy and efficiency of the GLDM model applied to your data.
 
 
-<img src="mainscheme.png" alt="alt text" width="500">
+
+![mainscheme](https://github.com/user-attachments/assets/b0b1b35a-1ac9-4a7d-ae4e-a2978fcd89ad)
 
 ![GLDMest](https://github.com/user-attachments/assets/592be036-9b45-4c5e-b526-221fc1367eb6)
 
