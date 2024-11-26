@@ -49,13 +49,12 @@ The default input data is expected to be in a file named input.txt. The data str
 | **Line** | **Content** |                    **Description**                                 |
 |----------|-------------|--------------------------------------------------------------------|
 | 1        | `:`         | Separator indicating the start of data sections                    |
-| 2        | `m ts`      | - `m`: Length of the time series<br>- `ts`                         |
+| 2        | `m ts`      | - `m`: Length of the time series<br `ts`                           |
 | 3        | `yt`        | First data point of the first time series                          |
 | 4        | `yt_1`      | Second data point of the first time series                         |
 | 5        | `yt_2`      | Third data point of the first time series                          |
 | ...      | `...`       | ...                                                                |
 | `m*ts + 2` | `yt_m`    | `m`-th data point of the `ts`-th time series                       |
-
 
 
 
