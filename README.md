@@ -109,7 +109,7 @@ Here's a step-by-step example to demonstrate how to use AbotalebGLDM:
 Create a file named input.txt in the same directory as your script with the following content:
 
 | **Data:**  **15      1**   |
-|-----------|----------------|
+|----------------------------|
 |0.2950428571                |
 |0.3935857143                |
 |0.5285714286                |
@@ -125,6 +125,7 @@ Create a file named input.txt in the same directory as your script with the foll
 |0.4574714286                |
 |0.4132                      |
 |0.3973                      |
+
 
 
 
