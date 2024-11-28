@@ -165,8 +165,6 @@ run("input.txt")
 
 
 
-![mainscheme](https://github.com/user-attachments/assets/b0b1b35a-1ac9-4a7d-ae4e-a2978fcd89ad)
-
 ![GLDMest](https://github.com/user-attachments/assets/592be036-9b45-4c5e-b526-221fc1367eb6)
 
 ![WLDM](https://github.com/user-attachments/assets/94928ea8-bad6-4a80-bb66-ba0aec8c4271)
