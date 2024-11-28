@@ -161,9 +161,11 @@ run("input.txt")
 
 ## **ALGEORITHMS SCHEMA:** 
 
-![alt text](GLDMest.png)
+![GLDMest](https://github.com/user-attachments/assets/5f5ec1ba-c610-46eb-adbb-ee7d42639948)
 
-![alt text](WLDM.png)
+
+![WLDM](https://github.com/user-attachments/assets/b6d66552-70be-4d27-ac5b-479eefe36991)
+
 
 ## License
 
