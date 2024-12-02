@@ -196,17 +196,17 @@ The Generalized Least Deviation Method (GLDM) is an iterative optimization algor
 ### 1. Initialization
 
 - **Input**:
-  - Time series data $S = \{ S_t \in \mathbb{R}^n \}_{t \in T}$.
-  - Gradient function $\nabla \mathcal{L}$.
-  - Historical observations $\{ y_t \}_{t=1-m}^T$.
+  - Time series data \( S = \{ S_t \in \mathbb{R}^n \}_{t \in T} \).
+  - Gradient function \( \nabla \mathcal{L} \).
+  - Historical observations \( \{ y_t \}_{t=1-m}^T \).
 - **Weights**:
-  - Initialize $p_t = 1$ for all $t \in \{1, 2, \ldots, T\}$.
+  - Initialize \( p_t = 1 \) for all \( t \in \{1, 2, \ldots, T\} \).
 
 ---
 
 ### 2. Initial Estimation
 
-- Apply the Weighted Least Deviation Method (WLDM) to estimate the initial coefficients $A^{(1)}$ and auxiliary variables $z^{(1)}$:
+- Apply the Weighted Least Deviation Method (WLDM) to estimate the initial coefficients \( A^{(1)} \) and auxiliary variables \( z^{(1)} \):
 
   $$
   (A^{(1)}, z^{(1)}) \leftarrow \text{WLDM}\left( S, \nabla \mathcal{L}, \{ p_t \}_{t=1}^T, \{ y_t \}_{t=1-m}^T \right)
@@ -216,7 +216,7 @@ The Generalized Least Deviation Method (GLDM) is an iterative optimization algor
 
 ### 3. Update Weights
 
-- For every $t$, update the weights based on the current auxiliary variable $z_t^{(1)}$:
+- For every \( t \), update the weights based on the current auxiliary variable \( z_t^{(1)} \):
 
   $$
   p_t \leftarrow \frac{1}{1 + \left( z_t^{(1)} \right)^2}
@@ -226,9 +226,9 @@ The Generalized Least Deviation Method (GLDM) is an iterative optimization algor
 
 ### 4. Iterative Optimization
 
-- Start with $k = 2$ and repeat the following steps:
+- Start with \( k = 2 \) and repeat the following steps:
 
-  1. Reapply the WLDM to obtain updated estimates $A^{(k)}$ and $z^{(k)}$:
+  1. Reapply the WLDM to obtain updated estimates \( A^{(k)} \) and \( z^{(k)} \):
 
      $$
      (A^{(k)}, z^{(k)}) \leftarrow \text{WLDM}\left( S, \nabla \mathcal{L}, \{ p_t \}_{t=1}^T, \{ y_t \}_{t=1-m}^T \right)
@@ -242,26 +242,26 @@ The Generalized Least Deviation Method (GLDM) is an iterative optimization algor
 
   3. **Check for convergence**:
 
-     - If $A^{(k)} \neq A^{(k-1)}$, increment $k$ and repeat.
+     - If \( A^{(k)} \neq A^{(k-1)} \), increment \( k \) and repeat.
      - Otherwise, proceed to the next step.
 
 ---
 
 ### 5. Convergence Check
 
-- The algorithm terminates when $A^{(k)} \approx A^{(k-1)}$, ensuring the parameters have converged.
+- The algorithm terminates when \( A^{(k)} \approx A^{(k-1)} \), ensuring the parameters have converged.
 
 ---
 
 ### 6. Output
 
-- The final coefficients $A^{(k)}$ and auxiliary variables $z^{(k)}$ are returned.
+- The final coefficients \( A^{(k)} \) and auxiliary variables \( z^{(k)} \) are returned.
 
 ---
 
 ## Key Features
 
-- **Dynamic Weights**: The algorithm adjusts weights $p_t$ to reduce the impact of outliers.
+- **Dynamic Weights**: The algorithm adjusts weights \( p_t \) to reduce the impact of outliers.
 - **Iterative Refinement**: Repeated adjustments improve accuracy and robustness.
 - **Nonlinear Data Handling**: Capable of modeling complex, nonlinear patterns.
 
@@ -285,7 +285,7 @@ $$
 S = \{ y_1, y_2, y_3, y_4, y_5 \} = \{ 5.0, 4.8, 5.2, 5.1, 4.9 \}
 $$
 
-We aim to forecast the next value $y_6$ using the Generalized Least Deviation Method.
+We aim to forecast the next value \( y_6 \) using the Generalized Least Deviation Method.
 
 ---
 
@@ -299,13 +299,13 @@ We aim to forecast the next value $y_6$ using the Generalized Least Deviation Me
   p_t = 1, \quad \forall t \in \{1, 2, 3, 4, 5\}
   $$
 
-- Define the gradient function $\nabla \mathcal{L}$ (based on the objective function).
+- Define the gradient function \( \nabla \mathcal{L} \) (based on the objective function).
 
 ---
 
 ### 2. First Estimation
 
-Using the initial weights $p_t = 1$, apply WLDM to estimate the coefficients $A^{(1)}$ and auxiliary variables $z^{(1)}$.
+Using the initial weights \( p_t = 1 \), apply WLDM to estimate the coefficients \( A^{(1)} \) and auxiliary variables \( z^{(1)} \).
 
 - **Objective function**:
 
@@ -322,15 +322,10 @@ Using the initial weights $p_t = 1$, apply WLDM to estimate the coefficients $A^
 - **Auxiliary variables**:
 
   $$
-  z^{(1)} = \left\{
-  \begin{array}{l}
-  z_1^{(1)} = 0.10, \\
-  z_2^{(1)} = 0.15, \\
-  z_3^{(1)} = 0.20, \\
-  z_4^{(1)} = 0.10, \\
-  z_5^{(1)} = 0.12
-  \end{array}
-  \right.
+  \begin{aligned}
+  z^{(1)} &= \{ z_1^{(1)}, z_2^{(1)}, z_3^{(1)}, z_4^{(1)}, z_5^{(1)} \} \\
+          &= \{ 0.10, \quad 0.15, \quad 0.20, \quad 0.10, \quad 0.12 \}
+  \end{aligned}
   $$
 
 ---
@@ -359,7 +354,7 @@ $$
 
 ### 4. Iterative Optimization
 
-For $k = 2$, reapply WLDM using the updated weights $\{ p_t \}$.
+For \( k = 2 \), reapply WLDM using the updated weights \( \{ p_t \} \).
 
 - **Solve for new coefficients**:
 
@@ -370,32 +365,27 @@ For $k = 2$, reapply WLDM using the updated weights $\{ p_t \}$.
 - **Update auxiliary variables**:
 
   $$
-  z^{(2)} = \left\{
-  \begin{array}{l}
-  z_1^{(2)} = 0.08, \\
-  z_2^{(2)} = 0.13, \\
-  z_3^{(2)} = 0.18, \\
-  z_4^{(2)} = 0.09, \\
-  z_5^{(2)} = 0.10
-  \end{array}
-  \right.
+  \begin{aligned}
+  z^{(2)} &= \{ z_1^{(2)}, z_2^{(2)}, z_3^{(2)}, z_4^{(2)}, z_5^{(2)} \} \\
+          &= \{ 0.08, \quad 0.13, \quad 0.18, \quad 0.09, \quad 0.10 \}
+  \end{aligned}
   $$
 
 **Check convergence**:
 
-- Compare $A^{(2)}$ and $A^{(1)}$:
+- Compare \( A^{(2)} \) and \( A^{(1)} \):
 
   $$
   A^{(2)} \neq A^{(1)}
   $$
 
-- Increment $k$ and repeat.
+- Increment \( k \) and repeat.
 
 ---
 
 ### 5. Convergence
 
-After $k = 5$, coefficients stabilize:
+After \( k = 5 \), coefficients stabilize:
 
 $$
 A^{(5)} = \{ a_1 = 0.55, \quad a_2 = 0.27 \}
@@ -404,22 +394,17 @@ $$
 **Auxiliary variables**:
 
 $$
-z^{(5)} = \left\{
-\begin{array}{l}
-z_1^{(5)} = 0.05, \\
-z_2^{(5)} = 0.08, \\
-z_3^{(5)} = 0.12, \\
-z_4^{(5)} = 0.06, \\
-z_5^{(5)} = 0.07
-\end{array}
-\right.
+\begin{aligned}
+z^{(5)} &= \{ z_1^{(5)}, z_2^{(5)}, z_3^{(5)}, z_4^{(5)}, z_5^{(5)} \} \\
+        &= \{ 0.05, \quad 0.08, \quad 0.12, \quad 0.06, \quad 0.07 \}
+\end{aligned}
 $$
 
 ---
 
 ### 6. Forecasting
 
-Using the final coefficients $A^{(5)}$, forecast $y_6$:
+Using the final coefficients \( A^{(5)} \), forecast \( y_6 \):
 
 $$
 y_6 = a_1 \cdot y_5 + a_2 \cdot y_4
@@ -430,8 +415,8 @@ $$
 $$
 \begin{aligned}
 y_6 &= 0.55 \times 4.9 + 0.27 \times 5.1 \\
-&= 2.695 + 1.377 \\
-&= 5.072
+    &= 2.695 + 1.377 \\
+    &= 5.072
 \end{aligned}
 $$
 
@@ -439,9 +424,10 @@ $$
 
 ## Final Output
 
-- **Predicted Value**: $y_6 = 5.072$
-- **Final Coefficients**: $A^{(5)} = \{ a_1 = 0.55, \quad a_2 = 0.27 \}$
-- **Auxiliary Variables**: $z^{(5)} = \{ 0.05, 0.08, 0.12, 0.06, 0.07 \}$
+- **Predicted Value**: \( y_6 = 5.072 \)
+- **Final Coefficients**: \( A^{(5)} = \{ a_1 = 0.55, \quad a_2 = 0.27 \} \)
+- **Auxiliary Variables**: \( z^{(5)} = \{ 0.05, \quad 0.08, \quad 0.12, \quad 0.06, \quad 0.07 \} \)
+
 
 
 
