@@ -2,7 +2,7 @@
 Generalized Least Deviation Method High Order
 # abotaleb1
 
-**abotaleb1** is a Python package (version 1.0.0) designed for modeling univariate time series using the first to fifth-order **Generalized Least Deviation Method (GLDM)**. This method leverages previous time step values (e.g., $$ y_{t-1} $$, $$ y_{t-2} $$, $$ y_{t-3} $$, $$ y_{t-4} $$, $$ y_{t-5} $$) to forecast the current value ($$ y_t $$), providing accurate and efficient predictions for various time series applications.
+**abotaleb1** is a Python package (version 1.0.0) designed for modeling univariate time series using the first to fifth-order **Generalized Least Deviation Method (GLDM)**. This method leverages previous time step values (e.g., $y_{t-1}$, $y_{t-2}$, $y_{t-3}$, $y_{t-4}$, $y_{t-5}$) to forecast the current value ($y_t$), providing accurate and efficient predictions for various time series applications.
 
 
 ### Model Details and Coefficients
