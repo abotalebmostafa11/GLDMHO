@@ -87,7 +87,7 @@ To utilize the gldmabotaleb library, follow these simple steps:
 Model Execution: The GLDM model runs using the first-order method.
 **Automated Outputs:**
 **Figures:** Visualizations of the time series and forecasting results are saved automatically.
-**Output File (output.txt):** Contains model evaluations, Model coefficients (a_1,a_2), metrics, solution systems, time consumption, and memory usage.
+**Output File (output.txt):** Contains model evaluations, Model coefficients ($a_1$, $a_2$), metrics, solution systems, time consumption, and memory usage.
 ## **Outputs**
 **After running the model, the following outputs are generated:**
 **Figures:** Visual representations of the time series data and forecasting results. These figures are typically saved in formats like .png in the directory where the script is executed.
