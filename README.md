@@ -202,7 +202,7 @@ The Generalized Least Deviation Method (GLDM) is an iterative optimization algor
 
 ---
 
-### 2. Initial Estimation
+## 2. Initial Estimation
 - Apply the Weighted Least Deviation Method (WLDM) to estimate the initial coefficients $A^{(1)}$ and auxiliary variables $z^{(1)}$:
   $$
   (A^{(1)}, z^{(1)}) \leftarrow \text{WLDM}(S, \nabla \mathcal{L}, \{p_t\}_{t=1}^T, \{y_t\}_{t=1-m}^T)
@@ -210,7 +210,7 @@ The Generalized Least Deviation Method (GLDM) is an iterative optimization algor
 
 ---
 
-### 3. Update Weights
+## 3. Update Weights
 - For every $t$, update the weights based on the current auxiliary variable $z_t^{(1)}$:
   $$
   p_t \leftarrow \frac{1}{1 + (z_t^{(1)})^2}
@@ -218,7 +218,7 @@ The Generalized Least Deviation Method (GLDM) is an iterative optimization algor
 
 ---
 
-### 4. Iterative Optimization
+## 4. Iterative Optimization
 - Start with $k = 2$ and repeat the following steps:
   1. Reapply the WLDM to obtain updated estimates $A^{(k)}$ and $z^{(k)}$:
      $$
