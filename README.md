@@ -88,6 +88,28 @@ Model Execution: The GLDM model runs using the first-order method.
 **Automated Outputs:**
 **Figures:** Visualizations of the time series and forecasting results are saved automatically.
 **Output File (output.txt):** Contains model evaluations, Model coefficients ($a_1$, $a_2$), metrics, solution systems, time consumption, and memory usage.
+
+**Generalized Least Deviation Method (GLDM)**
+
+The Generalized Least Deviation Method (GLDM) is used for modeling univariate time series. In GLDM, the number of coefficients increases with the order of the method:
+
+- **First Order**: 2 coefficients
+  - $a_1$, $a_2$
+
+- **Second Order**: 5 coefficients
+  - $a_1$, $a_2$, $a_3$, $a_4$, $a_5$
+
+- **Third Order**: 9 coefficients
+  - $a_1$, $a_2$, $a_3$, $a_4$, $a_5$, $a_6$, $a_7$, $a_8$, $a_9$
+
+- **Fourth Order**: 14 coefficients
+  - $a_1$, $a_2$, $a_3$, $a_4$, $a_5$, $a_6$, $a_7$, $a_8$, $a_9$, $a_{10}$, $a_{11}$, $a_{12}$, $a_{13}$, $a_{14}$
+
+- **Fifth Order**: 20 coefficients
+  - $a_1$, $a_2$, $a_3$, $a_4$, $a_5$, $a_6$, $a_7$, $a_8$, $a_9$, $a_{10}$, $a_{11}$, $a_{12}$, $a_{13}$, $a_{14}$, $a_{15}$, $a_{16}$, $a_{17}$, $a_{18}$, $a_{19}$, $a_{20}$
+
+
+
 ## **Outputs**
 **After running the model, the following outputs are generated:**
 **Figures:** Visual representations of the time series data and forecasting results. These figures are typically saved in formats like .png in the directory where the script is executed.
