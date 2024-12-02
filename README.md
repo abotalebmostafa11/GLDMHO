@@ -200,7 +200,7 @@ run("input.txt")
 - Apply the Weighted Least Deviation Method (WLDM) to estimate the initial coefficients \( A^{(1)} \) and auxiliary variables \( z^{(1)} \):
 
   $$
-  (A^{(1)},\ z^{(1)}) \leftarrow \text{WLDM}\left( S,\ \{ p_t \},\ \{ y_t \} \right)
+  \left( A^{(1)},\ z^{(1)} \right) \leftarrow \text{WLDM}\left( S,\ \{ p_t \},\ \{ y_t \} \right)
   $$
 
 #### 3. Update Weights
@@ -218,7 +218,7 @@ run("input.txt")
   1. Reapply the WLDM to obtain updated estimates \( A^{(k)} \) and \( z^{(k)} \):
 
      $$
-     (A^{(k)},\ z^{(k)}) \leftarrow \text{WLDM}\left( S,\ \{ p_t \},\ \{ y_t \} \right)
+     \left( A^{(k)},\ z^{(k)} \right) \leftarrow \text{WLDM}\left( S,\ \{ p_t \},\ \{ y_t \} \right)
      $$
 
   2. Update the weights:
@@ -265,9 +265,7 @@ We aim to forecast the next value \( y_6 \) using the Generalized Least Deviatio
 
 #### 2. Initial Estimation
 
-- Apply WLDM to estimate the initial coefficients \( A^{(1)} \) and auxiliary variables \( z^{(1)} \).
-
-- **Initial coefficients** (after solving):
+- Apply WLDM to estimate the initial coefficients \( A^{(1)} \) and auxiliary variables \( z^{(1)} \):
 
   $$
   A^{(1)} = \{ a_1 = 0.5,\ a_2 = 0.3 \}
