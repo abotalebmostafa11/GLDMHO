@@ -8,30 +8,30 @@ Generalized Least Deviation Method High Order
 
 In the Generalized Least Deviation Method (GLDM), the number of coefficients and the lagged variables used increase with the order of the method:
 
-- **First Order**: Uses one lagged variable to forecast \( y_t \).
-  - **Lagged Variables**: \( y_{t-1} \)
+- **First Order**: Uses one lagged variable to forecast $y_t$.
+  - **Lagged Variables**: $y_{t-1}$
   - **Coefficients**: 2 coefficients
-    - \( a_1 \), \( a_2 \)
+    - $a_1$, $a_2$
 
-- **Second Order**: Uses two lagged variables to forecast \( y_t \).
-  - **Lagged Variables**: \( y_{t-1} \), \( y_{t-2} \)
+- **Second Order**: Uses two lagged variables to forecast $y_t$.
+  - **Lagged Variables**: $y_{t-1}$, $y_{t-2}$
   - **Coefficients**: 5 coefficients
-    - \( a_1 \), \( a_2 \), \( a_3 \), \( a_4 \), \( a_5 \)
+    - $a_1$, $a_2$, $a_3$, $a_4$, $a_5$
 
-- **Third Order**: Uses three lagged variables to forecast \( y_t \).
-  - **Lagged Variables**: \( y_{t-1} \), \( y_{t-2} \), \( y_{t-3} \)
+- **Third Order**: Uses three lagged variables to forecast $y_t$.
+  - **Lagged Variables**: $y_{t-1}$, $y_{t-2}$, $y_{t-3}$
   - **Coefficients**: 9 coefficients
-    - \( a_1 \), \( a_2 \), \( a_3 \), \( a_4 \), \( a_5 \), \( a_6 \), \( a_7 \), \( a_8 \), \( a_9 \)
+    - $a_1$, $a_2$, $a_3$, $a_4$, $a_5$, $a_6$, $a_7$, $a_8$, $a_9$
 
-- **Fourth Order**: Uses four lagged variables to forecast \( y_t \).
-  - **Lagged Variables**: \( y_{t-1} \), \( y_{t-2} \), \( y_{t-3} \), \( y_{t-4} \)
+- **Fourth Order**: Uses four lagged variables to forecast $y_t$.
+  - **Lagged Variables**: $y_{t-1}$, $y_{t-2}$, $y_{t-3}$, $y_{t-4}$
   - **Coefficients**: 14 coefficients
-    - \( a_1 \), \( a_2 \), \( a_3 \), \( a_4 \), \( a_5 \), \( a_6 \), \( a_7 \), \( a_8 \), \( a_9 \), \( a_{10} \), \( a_{11} \), \( a_{12} \), \( a_{13} \), \( a_{14} \)
+    - $a_1$, $a_2$, $a_3$, $a_4$, $a_5$, $a_6$, $a_7$, $a_8$, $a_9$, $a_{10}$, $a_{11}$, $a_{12}$, $a_{13}$, $a_{14}$
 
-- **Fifth Order**: Uses five lagged variables to forecast \( y_t \).
-  - **Lagged Variables**: \( y_{t-1} \), \( y_{t-2} \), \( y_{t-3} \), \( y_{t-4} \), \( y_{t-5} \)
+- **Fifth Order**: Uses five lagged variables to forecast $y_t$.
+  - **Lagged Variables**: $y_{t-1}$, $y_{t-2}$, $y_{t-3}$, $y_{t-4}$, $y_{t-5}$
   - **Coefficients**: 20 coefficients
-    - \( a_1 \), \( a_2 \), \( a_3 \), \( a_4 \), \( a_5 \), \( a_6 \), \( a_7 \), \( a_8 \), \( a_9 \), \( a_{10} \), \( a_{11} \), \( a_{12} \), \( a_{13} \), \( a_{14} \), \( a_{15} \), \( a_{16} \), \( a_{17} \), \( a_{18} \), \( a_{19} \), \( a_{20} \)
+    - $a_1$, $a_2$, $a_3$, $a_4$, $a_5$, $a_6$, $a_7$, $a_8$, $a_9$, $a_{10}$, $a_{11}$, $a_{12}$, $a_{13}$, $a_{14}$, $a_{15}$, $a_{16}$, $a_{17}$, $a_{18}$, $a_{19}$, $a_{20}$
 
 ## Table of Contents
 
