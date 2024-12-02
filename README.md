@@ -190,47 +190,54 @@ run("input.txt")
 #### 1. Initialization
 
 - **Input**:
-  - Time series data $S = \{ y_t \}_{t=1}^T$.
-  - Historical observations $\{ y_t \}_{t=1-m}^T$.
+  - Time series data \( S = \{ y_t \}_{t=1}^T \).
+  - Historical observations \( \{ y_t \}_{t=1-m}^T \).
 - **Weights**:
-  - Initialize $p_t = 1$ for all $t \in \{1, 2, \ldots, T\}$.
+  - Initialize \( p_t = 1 \) for all \( t \in \{1, 2, \ldots, T\} \).
 
 #### 2. Initial Estimation
 
-- Apply the Weighted Least Deviation Method (WLDM) to estimate the initial coefficients $A^{(1)}$ and auxiliary variables $z^{(1)}$:
+- Apply the Weighted Least Deviation Method (WLDM) to estimate the initial coefficients \( A^{(1)} \) and auxiliary variables \( z^{(1)} \):
+
   $$
-  (A^{(1)}, z^{(1)}) \leftarrow \text{WLDM}\left( S, \{ p_t \}, \{ y_t \} \right)
+  (A^{(1)},\ z^{(1)}) \leftarrow \text{WLDM}\left( S,\ \{ p_t \},\ \{ y_t \} \right)
   $$
 
 #### 3. Update Weights
 
-- For every $t$, update the weights based on the current auxiliary variable $z_t^{(1)}$:
+- For every \( t \), update the weights based on the current auxiliary variable \( z_t^{(1)} \):
+
   $$
   p_t \leftarrow \frac{1}{1 + \left( z_t^{(1)} \right)^2}
   $$
 
 #### 4. Iterative Optimization
 
-- Start with $k = 2$ and repeat the following steps:
-  1. Reapply the WLDM to obtain updated estimates $A^{(k)}$ and $z^{(k)}$:
+- Start with \( k = 2 \) and repeat the following steps:
+
+  1. Reapply the WLDM to obtain updated estimates \( A^{(k)} \) and \( z^{(k)} \):
+
      $$
-     (A^{(k)}, z^{(k)}) \leftarrow \text{WLDM}\left( S, \{ p_t \}, \{ y_t \} \right)
+     (A^{(k)},\ z^{(k)}) \leftarrow \text{WLDM}\left( S,\ \{ p_t \},\ \{ y_t \} \right)
      $$
+
   2. Update the weights:
+
      $$
      p_t \leftarrow \frac{1}{1 + \left( z_t^{(k)} \right)^2}
      $$
+
   3. **Check for convergence**:
-     - If $A^{(k)} \neq A^{(k-1)}$, increment $k$ and repeat.
+     - If \( A^{(k)} \neq A^{(k-1)} \), increment \( k \) and repeat.
      - Otherwise, proceed to the next step.
 
 #### 5. Convergence Check
 
-- The algorithm terminates when $A^{(k)} \approx A^{(k-1)}$, ensuring the parameters have converged.
+- The algorithm terminates when \( A^{(k)} \approx A^{(k-1)} \), ensuring the parameters have converged.
 
 #### 6. Output
 
-- The final coefficients $A^{(k)}$ and auxiliary variables $z^{(k)}$ are returned.
+- The final coefficients \( A^{(k)} \) and auxiliary variables \( z^{(k)} \) are returned.
 
 ---
 
@@ -239,25 +246,29 @@ run("input.txt")
 ### Problem Statement
 
 Given a time series dataset:
+
 $$
 S = \{ y_1 = 5.0,\ y_2 = 4.8,\ y_3 = 5.2,\ y_4 = 5.1,\ y_5 = 4.9 \}
 $$
-We aim to forecast the next value $y_6$ using the Generalized Least Deviation Method.
+
+We aim to forecast the next value \( y_6 \) using the Generalized Least Deviation Method.
 
 ### Steps
 
 #### 1. Initialization
 
 - Initialize weights:
+
   $$
   p_t = 1, \quad \forall t \in \{1, 2, 3, 4, 5\}
   $$
 
-#### 2. First Estimation
+#### 2. Initial Estimation
 
-- Apply WLDM to estimate the initial coefficients $A^{(1)}$ and auxiliary variables $z^{(1)}$.
+- Apply WLDM to estimate the initial coefficients \( A^{(1)} \) and auxiliary variables \( z^{(1)} \).
 
 - **Initial coefficients** (after solving):
+
   $$
   A^{(1)} = \{ a_1 = 0.5,\ a_2 = 0.3 \}
   $$
@@ -265,22 +276,25 @@ We aim to forecast the next value $y_6$ using the Generalized Least Deviation Me
 #### 3. Update Weights
 
 - Update weights using:
+
   $$
   p_t \leftarrow \frac{1}{1 + \left( z_t^{(1)} \right)^2}
   $$
 
 #### 4. Iterative Optimization
 
-- Repeat estimation and weight updates until coefficients stabilize (e.g., after $k = 5$ iterations).
+- Repeat estimation and weight updates until coefficients stabilize (e.g., after \( k = 5 \) iterations).
 
 #### 5. Forecasting
 
-- Using the final coefficients $A^{(5)}$, forecast $y_6$:
+- Using the final coefficients \( A^{(5)} \), forecast \( y_6 \):
+
   $$
   y_6 = a_1 \cdot y_5 + a_2 \cdot y_4
   $$
 
 - **Substitute values**:
+
   $$
   \begin{align*}
   y_6 &= 0.55 \times 4.9 + 0.27 \times 5.1 \\
@@ -291,14 +305,14 @@ We aim to forecast the next value $y_6$ using the Generalized Least Deviation Me
 
 ### Final Output
 
-- **Predicted Value**: $y_6 = 5.072$
-- **Final Coefficients**: $A^{(5)} = \{ a_1 = 0.55,\ a_2 = 0.27 \}$
+- **Predicted Value**: \( y_6 = 5.072 \)
+- **Final Coefficients**: \( A^{(5)} = \{ a_1 = 0.55,\ a_2 = 0.27 \} \)
 
 ---
 
 ## Key Features
 
-- **Dynamic Weights**: Adjusts weights $p_t$ to reduce the impact of outliers.
+- **Dynamic Weights**: Adjusts weights \( p_t \) to reduce the impact of outliers.
 - **Iterative Refinement**: Repeated adjustments improve accuracy and robustness.
 - **Nonlinear Data Handling**: Capable of modeling complex, nonlinear patterns.
 
