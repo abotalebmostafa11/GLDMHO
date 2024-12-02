@@ -204,7 +204,7 @@ The Generalized Least Deviation Method (GLDM) is an iterative optimization algor
 ## 2. Initial Estimation
 - Apply the Weighted Least Deviation Method (WLDM) to estimate the initial coefficients $A^{(1)}$ and auxiliary variables $z^{(1)}$:
   $$
-  (A^{(1)}, z^{(1)}) \gets \text{WLDM}(S, \nabla \mathcal{L}, \{p_t\}_{t=1}^T, \{y_t\}_{t=1-m}^T)
+  A^{(1)}, z^{(1)} \gets \text{WLDM}(S, \nabla \mathcal{L}, \{p_t\}_{t=1}^T, \{y_t\}_{t=1-m}^T)
   $$
 
 ---
@@ -218,18 +218,36 @@ The Generalized Least Deviation Method (GLDM) is an iterative optimization algor
 ---
 
 ## 4. Iterative Optimization
-- Start with $k = 2$ and repeat the following steps:
-  1. Reapply the WLDM to compute updated estimates $A^{(k)}$ and $z^{(k)}$:
+- Start with:
+  $$
+  k = 2
+  $$
+
+- Repeat the following steps:
+
+  1. Reapply the WLDM to compute updated estimates:
      $$
-     (A^{(k)}, z^{(k)}) \gets \text{WLDM}(S, \nabla \mathcal{L}, \{p_t^{(k-1)}\}_{t=1}^T, \{y_t\}_{t=1-m}^T)
+     A^{(k)}, z^{(k)} \gets \text{WLDM}(S, \nabla \mathcal{L}, \{p_t^{(k-1)}\}_{t=1}^T, \{y_t\}_{t=1-m}^T)
      $$
+
   2. Update the weights for all $t$:
      $$
      p_t^{(k)} = \frac{1}{1 + (z_t^{(k)})^2}
      $$
+
   3. Check for convergence:
-     - If $A^{(k)} \neq A^{(k-1)}$, increment $k$ and repeat.
+     - If:
+       $$
+       A^{(k)} \neq A^{(k-1)}
+       $$
+       Increment:
+       $$
+       k = k + 1
+       $$
+       and repeat.
+
      - Otherwise, stop and return the results.
+
 
 ---
 
