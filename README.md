@@ -222,7 +222,7 @@ The Generalized Least Deviation Method (GLDM) is an iterative optimization algor
 - Start with $k = 2$ and repeat the following steps:
   1. Reapply the WLDM to obtain updated estimates $A^{(k)}$ and $z^{(k)}$:
      $$
-     (A^{(k)}, z^{(k)}) \leftarrow \text{WLDM}(S, \nabla \mathcal{L}, \{p_t\}_{t=1}^T, \{y_t\}_{t=1-m}^T)
+     (A^{(k)}, z^{(k)}) \leftarrow \text{WLDM}(S, \nabla \mathcal{L}, \{p_t^{(k-1)}\}_{t=1}^T, \{y_t\}_{t=1-m}^T)
      $$
   2. Update the weights:
      $$
