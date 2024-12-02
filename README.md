@@ -1,6 +1,6 @@
 # GLDMHO
 Generalized Least Deviation Method High Order
-# gldmabotaleb
+# abotaleb1
 
 **gldmabotaleb** is a Python library (version 1.0.0) designed for modeling univariate time series using the first-order **Generalized Least Deviation Method (GLDM)**. This method leverages the previous time step value (yₜ₋₁) to forecast the current value (yₜ), providing accurate and efficient predictions for various time series applications.
 
@@ -130,6 +130,13 @@ run("input.txt")
 ## **ALGEORITHMS SCHEMA:** 
 ![GLDMest](https://github.com/user-attachments/assets/5f5ec1ba-c610-46eb-adbb-ee7d42639948)
 ![WLDM](https://github.com/user-attachments/assets/b6d66552-70be-4d27-ac5b-479eefe36991)
+
+
+![GLDM](https://github.com/user-attachments/assets/235b6e1d-c595-426b-ac75-4fd661d76ce1)
+
+
+
+
 ## License
 © 2024 Author: Mostafa Abotaleb
 <pre>
