@@ -209,7 +209,7 @@ The Generalized Least Deviation Method (GLDM) is an iterative optimization algor
 - Apply the Weighted Least Deviation Method (WLDM) to estimate the initial coefficients \( A^{(1)} \) and auxiliary variables \( z^{(1)} \):
 
   $$
-  \left( A^{(1)}, z^{(1)} \right) \leftarrow \text{WLDM}\left( S, \nabla \mathcal{L}, \{ p_t \}_{t=1}^T, \{ y_t \}_{t=1-m}^T \right)
+  ( A^{(1)}, z^{(1)} ) \leftarrow \text{WLDM}\big( S, \nabla \mathcal{L}, \{ p_t \}_{t=1}^T,\  \{ y_t \}_{t=1-m}^T \big)
   $$
 
 ---
@@ -219,7 +219,7 @@ The Generalized Least Deviation Method (GLDM) is an iterative optimization algor
 - For every \( t \), update the weights based on the current auxiliary variable \( z_t^{(1)} \):
 
   $$
-  p_t \leftarrow \frac{1}{1 + \left( z_t^{(1)} \right)^2}
+  p_t \leftarrow \frac{1}{1 + \big( z_t^{(1)} \big)^2}
   $$
 
 ---
@@ -231,13 +231,13 @@ The Generalized Least Deviation Method (GLDM) is an iterative optimization algor
   1. Reapply the WLDM to obtain updated estimates \( A^{(k)} \) and \( z^{(k)} \):
 
      $$
-     \left( A^{(k)}, z^{(k)} \right) \leftarrow \text{WLDM}\left( S, \nabla \mathcal{L}, \{ p_t \}_{t=1}^T, \{ y_t \}_{t=1-m}^T \right)
+     ( A^{(k)}, z^{(k)} ) \leftarrow \text{WLDM}\big( S, \nabla \mathcal{L}, \{ p_t \}_{t=1}^T,\  \{ y_t \}_{t=1-m}^T \big)
      $$
 
   2. Update the weights:
 
      $$
-     p_t^{(k)} \leftarrow \frac{1}{1 + \left( z_t^{(k)} \right)^2}, \quad \forall t
+     p_t^{(k)} \leftarrow \frac{1}{1 + \big( z_t^{(k)} \big)^2}, \quad \forall t
      $$
 
   3. **Check for convergence**:
@@ -282,7 +282,7 @@ The Generalized Least Deviation Method (GLDM) is an iterative optimization algor
 Given a time series dataset:
 
 $$
-S = \{ y_1, y_2, y_3, y_4, y_5 \} = \{ 5.0, 4.8, 5.2, 5.1, 4.9 \}
+S = \{ y_1, y_2, y_3, y_4, y_5 \} = \{ 5.0,\ 4.8,\ 5.2,\ 5.1,\ 4.9 \}
 $$
 
 We aim to forecast the next value \( y_6 \) using the Generalized Least Deviation Method.
@@ -296,7 +296,7 @@ We aim to forecast the next value \( y_6 \) using the Generalized Least Deviatio
 - Initialize weights:
 
   $$
-  p_t = 1, \quad \forall t \in \{1, 2, 3, 4, 5\}
+  p_t = 1, \quad \forall t \in \{1,\ 2,\ 3,\ 4,\ 5\}
   $$
 
 - Define the gradient function \( \nabla \mathcal{L} \) (based on the objective function).
@@ -310,22 +310,19 @@ Using the initial weights \( p_t = 1 \), apply WLDM to estimate the coefficients
 - **Objective function**:
 
   $$
-  \sum_{t=1}^5 p_t \cdot \arctan\left( \left| \hat{y}_t - y_t \right| \right) \to \min
+  \sum_{t=1}^5 p_t \cdot \arctan\big( \left| \hat{y}_t - y_t \right| \big) \to \min
   $$
 
 - **Initial coefficients** (after solving):
 
   $$
-  A^{(1)} = \{ a_1 = 0.5, \quad a_2 = 0.3 \}
+  A^{(1)} = \{ a_1 = 0.5,\ a_2 = 0.3 \}
   $$
 
 - **Auxiliary variables**:
 
   $$
-  \begin{aligned}
-  z^{(1)} &= \{ z_1^{(1)}, z_2^{(1)}, z_3^{(1)}, z_4^{(1)}, z_5^{(1)} \} \\
-          &= \{ 0.10, \quad 0.15, \quad 0.20, \quad 0.10, \quad 0.12 \}
-  \end{aligned}
+  z^{(1)} = \{ z_1^{(1)},\ z_2^{(1)},\ z_3^{(1)},\ z_4^{(1)},\ z_5^{(1)} \} = \{ 0.10,\ 0.15,\ 0.20,\ 0.10,\ 0.12 \}
   $$
 
 ---
@@ -335,7 +332,7 @@ Using the initial weights \( p_t = 1 \), apply WLDM to estimate the coefficients
 Update weights using:
 
 $$
-p_t \leftarrow \frac{1}{1 + \left( z_t^{(1)} \right)^2}
+p_t \leftarrow \frac{1}{1 + \big( z_t^{(1)} \big)^2}
 $$
 
 - **Compute updated weights**:
@@ -359,16 +356,13 @@ For \( k = 2 \), reapply WLDM using the updated weights \( \{ p_t \} \).
 - **Solve for new coefficients**:
 
   $$
-  A^{(2)} = \{ a_1 = 0.52, \quad a_2 = 0.28 \}
+  A^{(2)} = \{ a_1 = 0.52,\ a_2 = 0.28 \}
   $$
 
 - **Update auxiliary variables**:
 
   $$
-  \begin{aligned}
-  z^{(2)} &= \{ z_1^{(2)}, z_2^{(2)}, z_3^{(2)}, z_4^{(2)}, z_5^{(2)} \} \\
-          &= \{ 0.08, \quad 0.13, \quad 0.18, \quad 0.09, \quad 0.10 \}
-  \end{aligned}
+  z^{(2)} = \{ z_1^{(2)},\ z_2^{(2)},\ z_3^{(2)},\ z_4^{(2)},\ z_5^{(2)} \} = \{ 0.08,\ 0.13,\ 0.18,\ 0.09,\ 0.10 \}
   $$
 
 **Check convergence**:
@@ -388,16 +382,13 @@ For \( k = 2 \), reapply WLDM using the updated weights \( \{ p_t \} \).
 After \( k = 5 \), coefficients stabilize:
 
 $$
-A^{(5)} = \{ a_1 = 0.55, \quad a_2 = 0.27 \}
+A^{(5)} = \{ a_1 = 0.55,\ a_2 = 0.27 \}
 $$
 
 **Auxiliary variables**:
 
 $$
-\begin{aligned}
-z^{(5)} &= \{ z_1^{(5)}, z_2^{(5)}, z_3^{(5)}, z_4^{(5)}, z_5^{(5)} \} \\
-        &= \{ 0.05, \quad 0.08, \quad 0.12, \quad 0.06, \quad 0.07 \}
-\end{aligned}
+z^{(5)} = \{ z_1^{(5)},\ z_2^{(5)},\ z_3^{(5)},\ z_4^{(5)},\ z_5^{(5)} \} = \{ 0.05,\ 0.08,\ 0.12,\ 0.06,\ 0.07 \}
 $$
 
 ---
@@ -425,8 +416,8 @@ $$
 ## Final Output
 
 - **Predicted Value**: \( y_6 = 5.072 \)
-- **Final Coefficients**: \( A^{(5)} = \{ a_1 = 0.55, \quad a_2 = 0.27 \} \)
-- **Auxiliary Variables**: \( z^{(5)} = \{ 0.05, \quad 0.08, \quad 0.12, \quad 0.06, \quad 0.07 \} \)
+- **Final Coefficients**: \( A^{(5)} = \{ a_1 = 0.55,\ a_2 = 0.27 \} \)
+- **Auxiliary Variables**: \( z^{(5)} = \{ 0.05,\ 0.08,\ 0.12,\ 0.06,\ 0.07 \} \)
 
 
 
