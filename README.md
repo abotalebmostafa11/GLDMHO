@@ -209,7 +209,7 @@ The Generalized Least Deviation Method (GLDM) is an iterative optimization algor
 - Apply the Weighted Least Deviation Method (WLDM) to estimate the initial coefficients \( A^{(1)} \) and auxiliary variables \( z^{(1)} \):
 
   $$
-  (A^{(1)}, z^{(1)}) \leftarrow \text{WLDM}\left( S, \nabla \mathcal{L}, \{ p_t \}_{t=1}^T, \{ y_t \}_{t=1-m}^T \right)
+  \left( A^{(1)}, z^{(1)} \right) \leftarrow \text{WLDM}\left( S, \nabla \mathcal{L}, \{ p_t \}_{t=1}^T, \{ y_t \}_{t=1-m}^T \right)
   $$
 
 ---
@@ -231,7 +231,7 @@ The Generalized Least Deviation Method (GLDM) is an iterative optimization algor
   1. Reapply the WLDM to obtain updated estimates \( A^{(k)} \) and \( z^{(k)} \):
 
      $$
-     (A^{(k)}, z^{(k)}) \leftarrow \text{WLDM}\left( S, \nabla \mathcal{L}, \{ p_t \}_{t=1}^T, \{ y_t \}_{t=1-m}^T \right)
+     \left( A^{(k)}, z^{(k)} \right) \leftarrow \text{WLDM}\left( S, \nabla \mathcal{L}, \{ p_t \}_{t=1}^T, \{ y_t \}_{t=1-m}^T \right)
      $$
 
   2. Update the weights:
@@ -427,7 +427,6 @@ $$
 - **Predicted Value**: \( y_6 = 5.072 \)
 - **Final Coefficients**: \( A^{(5)} = \{ a_1 = 0.55, \quad a_2 = 0.27 \} \)
 - **Auxiliary Variables**: \( z^{(5)} = \{ 0.05, \quad 0.08, \quad 0.12, \quad 0.06, \quad 0.07 \} \)
-
 
 
 
