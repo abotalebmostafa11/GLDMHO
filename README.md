@@ -183,71 +183,88 @@ run("input.txt")
 ![GLDMest](https://github.com/user-attachments/assets/5f5ec1ba-c610-46eb-adbb-ee7d42639948)
 
 
-## GLDM Algorithm
+# Generalized Least Deviation Method (GLDM)
 
-### Steps of the Algorithm
+## Overview
+The Generalized Least Deviation Method (GLDM) is an iterative optimization algorithm designed for modeling and forecasting time series data. It minimizes deviations between observed and predicted values using weighted least deviations. This method efficiently handles both linear and nonlinear patterns in data.
 
-#### 1. Initialization
+---
 
+## Steps of the Algorithm
+
+### 1. Initialization
 - **Input**:
-  - Time series data \( S = \{ y_t \}_{t=1}^T \).
-  - Historical observations \( \{ y_t \}_{t=1-m}^T \).
+  - Time series data $S = \{S_t \in \mathbb{R}^n\}_{t \in T}$.
+  - Gradient function $\nabla \mathcal{L}$.
+  - Historical observations $\{y_t\}_{t=1-m}^T$.
 - **Weights**:
-  - Initialize \( p_t = 1 \) for all \( t \in \{1, 2, \ldots, T\} \).
+  - Initialize $p_t = 1$ for all $t \in \{1, 2, \ldots, T\}$.
 
 ---
 
-#### 2. Initial Estimation
-
-- Apply the Weighted Least Deviation Method (WLDM) to estimate the initial coefficients \( A^{(1)} \) and auxiliary variables \( z^{(1)} \):
-
+### 2. Initial Estimation
+- Apply the Weighted Least Deviation Method (WLDM) to estimate the initial coefficients $A^{(1)}$ and auxiliary variables $z^{(1)}$:
   $$
-  (A^{(1)},\ z^{(1)}) \leftarrow \text{WLDM}\left( S,\ \{ p_t \},\ \{ y_t \} \right)
-  $$
-
----
-
-#### 3. Update Weights
-
-- For every \( t \), update the weights based on the current auxiliary variable \( z_t^{(1)} \):
-
-  $$
-  p_t \leftarrow \frac{1}{1 + \left( z_t^{(1)} \right)^2}
+  (A^{(1)}, z^{(1)}) \leftarrow \text{WLDM}(S, \nabla \mathcal{L}, \{p_t\}_{t=1}^T, \{y_t\}_{t=1-m}^T)
   $$
 
 ---
 
-#### 4. Iterative Optimization
+### 3. Update Weights
+- For every $t$, update the weights based on the current auxiliary variable $z_t^{(1)}$:
+  $$
+  p_t \leftarrow \frac{1}{1 + (z_t^{(1)})^2}
+  $$
 
-- Start with \( k = 2 \) and repeat the following steps:
+---
 
-  1. **Reapply WLDM** to obtain updated estimates \( A^{(k)} \) and \( z^{(k)} \):
-
+### 4. Iterative Optimization
+- Start with $k = 2$ and repeat the following steps:
+  1. Reapply the WLDM to obtain updated estimates $A^{(k)}$ and $z^{(k)}$:
      $$
-     (A^{(k)},\ z^{(k)}) \leftarrow \text{WLDM}\left( S,\ \{ p_t \},\ \{ y_t \} \right)
+     (A^{(k)}, z^{(k)}) \leftarrow \text{WLDM}(S, \nabla \mathcal{L}, \{p_t\}_{t=1}^T, \{y_t\}_{t=1-m}^T)
      $$
-
-  2. **Update the weights**:
-
+  2. Update the weights:
      $$
-     p_t \leftarrow \frac{1}{1 + \left( z_t^{(k)} \right)^2}
+     p_t^{(k)} \leftarrow \frac{1}{1 + (z_t^{(k)})^2}, \; \forall t
      $$
-
-  3. **Check for convergence**:
-     - If \( A^{(k)} \neq A^{(k-1)} \), increment \( k \) and repeat.
+  3. Check for convergence:
+     - If $A^{(k)} \neq A^{(k-1)}$, increment $k$ and repeat.
      - Otherwise, proceed to the next step.
 
 ---
 
-#### 5. Convergence Check
-
-- The algorithm terminates when \( A^{(k)} \approx A^{(k-1)} \), ensuring the parameters have converged.
+### 5. Convergence Check
+- The algorithm terminates when $A^{(k)} \approx A^{(k-1)}$, ensuring the parameters have converged.
 
 ---
 
-#### 6. Output
+### 6. Output
+- The final coefficients $A^{(k)}$ and auxiliary variables $z^{(k)}$ are returned.
 
-- The final coefficients \( A^{(k)} \) and auxiliary variables \( z^{(k)} \) are returned.
+---
+
+## Key Features
+- **Dynamic Weights**: The algorithm adjusts weights $p_t$ to reduce the impact of outliers.
+- **Iterative Refinement**: Repeated adjustments improve accuracy and robustness.
+- **Nonlinear Data Handling**: Capable of modeling complex, nonlinear patterns.
+
+---
+
+## Applications
+- Time series forecasting with complex dynamics.
+- Scenarios where robustness against outliers is essential.
+- High-accuracy modeling and forecasting tasks.
+
+
+
+
+
+
+
+
+
+
 
 
 ![WLDM](https://github.com/user-attachments/assets/b6d66552-70be-4d27-ac5b-479eefe36991)
