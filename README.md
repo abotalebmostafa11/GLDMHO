@@ -9,6 +9,8 @@ Generalized Least Deviation Method High Order
 
 In the Generalized Least Deviation Method (GLDM), the number of coefficients and the lagged variables used increase with the order of the method:
 
+![GLDM](https://github.com/user-attachments/assets/235b6e1d-c595-426b-ac75-4fd661d76ce1)
+
 - **First Order**: Uses one lagged variable to forecast $y_t$.
   - **Lagged Variables**: $y_{t-1}$
   - **Coefficients**: 2 coefficients
@@ -252,11 +254,14 @@ The Generalized Least Deviation Method (GLDM) is an iterative optimization algor
 
 ![image](https://github.com/user-attachments/assets/15902adb-f957-47de-ab4b-eba867e0d5bb)
 
+![image](https://github.com/user-attachments/assets/23861045-1611-4b4e-8337-227a86eb21b3)
+
+![image](https://github.com/user-attachments/assets/0e8a7136-aaf5-435a-87d1-ec7dadc6d9fc)
 
 
 
 
-![GLDM](https://github.com/user-attachments/assets/235b6e1d-c595-426b-ac75-4fd661d76ce1)
+
 
 
 
