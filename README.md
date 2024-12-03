@@ -233,18 +233,14 @@ The Generalized Least Deviation Method (GLDM) is an iterative optimization algor
 # Numerical Example of Generalized Least Deviation Method (GLDM)
 
 ![image](https://github.com/user-attachments/assets/3026b504-2e73-44bd-99fe-0b7350d1d04f)
-
 ![image](https://github.com/user-attachments/assets/52332c66-d39f-460d-ad25-f97c16542fc4)
-
 ![image](https://github.com/user-attachments/assets/5e5c92ed-7bea-4072-9eb3-9f9765c69c08)
-
-
-
-
-
-
-
 ![WLDM](https://github.com/user-attachments/assets/b6d66552-70be-4d27-ac5b-479eefe36991)
+
+
+
+
+
 
 
 ![GLDM](https://github.com/user-attachments/assets/235b6e1d-c595-426b-ac75-4fd661d76ce1)
