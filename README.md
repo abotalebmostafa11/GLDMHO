@@ -337,6 +337,152 @@ $$
 
 
 
+# Numerical Example of Generalized Least Deviation Method (GLDM)
+
+## Problem Statement
+
+Given a time series dataset:
+
+$$
+S = \{ y_1, y_2, y_3, y_4, y_5 \} = \{ 5.0,\ 4.8,\ 5.2,\ 5.1,\ 4.9 \}
+$$
+
+We aim to forecast the next value \( y_6 \) using the Generalized Least Deviation Method.
+
+---
+
+## Steps
+
+### 1. Initialization
+
+- **Initialize weights**:
+
+  $$
+  p_t = 1 \quad \forall t \in \{1,\ 2,\ 3,\ 4,\ 5\}
+  $$
+
+- **Define the gradient function** \( \nabla \mathcal{L} \) (based on the objective function).
+
+---
+
+### 2. First Estimation
+
+Using the initial weights \( p_t = 1 \), apply WLDM to estimate the coefficients \( A^{(1)} \) and auxiliary variables \( z^{(1)} \).
+
+- **Objective function**:
+
+  $$
+  \sum_{t=1}^5 p_t \cdot \arctan\left( \left| \hat{y}_t - y_t \right| \right) \to \min
+  $$
+
+- **Initial coefficients** (after solving):
+
+  $$
+  A^{(1)} = \{ a_1 = 0.5,\ a_2 = 0.3 \}
+  $$
+
+- **Auxiliary variables**:
+
+  $$
+  z^{(1)} = \{ z_1^{(1)} = 0.1,\ z_2^{(1)} = 0.15,\ z_3^{(1)} = 0.2,\ z_4^{(1)} = 0.1,\ z_5^{(1)} = 0.12 \}
+  $$
+
+---
+
+### 3. Update Weights
+
+Update weights using:
+
+$$
+p_t \leftarrow \frac{1}{1 + \left( z_t^{(1)} \right)^2}
+$$
+
+- **Compute updated weights**:
+
+  $$
+  \begin{aligned}
+  p_1 &= \frac{1}{1 + (0.1)^2} = 0.9901, \\
+  p_2 &= \frac{1}{1 + (0.15)^2} = 0.9775, \\
+  p_3 &= \frac{1}{1 + (0.2)^2} = 0.9615, \\
+  p_4 &= \frac{1}{1 + (0.1)^2} = 0.9901, \\
+  p_5 &= \frac{1}{1 + (0.12)^2} = 0.9852
+  \end{aligned}
+  $$
+
+---
+
+### 4. Iterative Optimization
+
+For \( k = 2 \), reapply WLDM using the updated weights \( \{ p_t \} \).
+
+- **Solve for new coefficients**:
+
+  $$
+  A^{(2)} = \{ a_1 = 0.52,\ a_2 = 0.28 \}
+  $$
+
+- **Update auxiliary variables**:
+
+  $$
+  z^{(2)} = \{ z_1^{(2)} = 0.08,\ z_2^{(2)} = 0.13,\ z_3^{(2)} = 0.18,\ z_4^{(2)} = 0.09,\ z_5^{(2)} = 0.10 \}
+  $$
+
+**Check convergence**:
+
+- Compare \( A^{(2)} \) and \( A^{(1)} \):
+
+  $$
+  A^{(2)} \neq A^{(1)}
+  $$
+
+- Increment \( k \) and repeat the steps.
+
+---
+
+### 5. Convergence
+
+After \( k = 5 \), coefficients stabilize:
+
+$$
+A^{(5)} = \{ a_1 = 0.55,\ a_2 = 0.27 \}
+$$
+
+**Auxiliary variables**:
+
+$$
+z^{(5)} = \{ z_1^{(5)} = 0.05,\ z_2^{(5)} = 0.08,\ z_3^{(5)} = 0.12,\ z_4^{(5)} = 0.06,\ z_5^{(5)} = 0.07 \}
+$$
+
+---
+
+### 6. Forecasting
+
+Using the final coefficients \( A^{(5)} \), forecast \( y_6 \):
+
+$$
+y_6 = a_1 \cdot y_5 + a_2 \cdot y_4
+$$
+
+**Substitute values**:
+
+$$
+\begin{aligned}
+y_6 &= 0.55 \times 4.9 + 0.27 \times 5.1 \\
+    &= 2.695 + 1.377 \\
+    &= 5.072
+\end{aligned}
+$$
+
+---
+
+## Final Output
+
+- **Predicted Value**: \( y_6 = 5.072 \)
+- **Final Coefficients**: \( A^{(5)} = \{ a_1 = 0.55,\ a_2 = 0.27 \} \)
+- **Auxiliary Variables**: \( z^{(5)} = \{ 0.05,\ 0.08,\ 0.12,\ 0.06,\ 0.07 \} \)
+
+
+
 
 
 
