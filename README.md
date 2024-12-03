@@ -201,7 +201,7 @@ The Generalized Least Deviation Method (GLDM) is an iterative optimization algor
   - Initialize $p_t = 1$ for all $t \in \{1, 2, \ldots, T\}$.
 
 ---
-![image](https://github.com/user-attachments/assets/7eaa0865-0859-429f-b2e2-c68c7c0af688)
+![image](https://github.com/user-attachments/assets/be0299a1-862b-4b21-8622-bfdb27ce593f)
 
 ---
 
