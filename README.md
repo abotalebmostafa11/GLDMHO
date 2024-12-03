@@ -217,19 +217,20 @@ The Generalized Least Deviation Method (GLDM) is an iterative optimization algor
 
 ---
 
+
 ## 4. Iterative Optimization
-- Start with $k = 2$ and repeat the following steps:
-  1. Reapply the WLDM to compute updated estimates $A^{(k)}$ and $z^{(k)}$:
-     $$
-     (A^{(k)}, z^{(k)}) = \text{WLDM}\left(S, \nabla \mathcal{L}, \{p_t^{(k-1)}\}_{t=1}^T, \{y_t\}_{t=1-m}^T\right)
-     $$
-  2. Update the weights for all $t$:
-     $$
-     p_t^{(k)} = \frac{1}{1 + \left(z_t^{(k)}\right)^2}
-     $$
-  3. Check for convergence:
-     - If $A^{(k)} \neq A^{(k-1)}$, increment $k$ and repeat.
-     - Otherwise, stop and return the results.
+- Start with k = 2 and repeat the following steps:
+1. Reapply the WLDM to compute updated estimates A^(k) and z^(k):
+   ```
+   (A^(k), z^(k)) = WLDM(S, ∇L, {p_t^(k-1)}_{t=1}^T, {y_t}_{t=1-m}^T)
+   ```
+2. Update the weights for all t:
+   ```
+   p_t^(k) = 1 / (1 + (z_t^(k))^2)
+   ```
+3. Check for convergence:
+   - If A^(k) ≠ A^(k-1), increment k and repeat.
+   - Otherwise, stop and return the results.
 
 ---
 
