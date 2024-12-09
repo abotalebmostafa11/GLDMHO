@@ -45,7 +45,6 @@ In the Generalized Least Deviation Method (GLDM), the number of coefficients and
   - [Running the Model](#running-the-model)
 - [Outputs](#outputs)
 - [Example](#example)
-- [Example](#ALGEORITHMS SCHEMA)
 - [License](#license)
 
 ## Features
