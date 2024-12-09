@@ -181,89 +181,9 @@ run("input.txt")
 3. Review the Outputs
 **Figures:** Check the generated visualizations in your directory. These may include plots of the original time series, forecasted values, and residuals.
 **output.txt:** Open the file to review model evaluations and performance metrics. This file provides insights into the accuracy and efficiency of the GLDM model applied to your data.
-## **ALGEORITHMS SCHEMA:** 
-![GLDMest](https://github.com/user-attachments/assets/5f5ec1ba-c610-46eb-adbb-ee7d42639948)
 
-
-# Generalized Least Deviation Method (GLDM)
-
-## Overview
-The Generalized Least Deviation Method (GLDM) is an iterative optimization algorithm designed for modeling and forecasting time series data. It minimizes deviations between observed and predicted values using weighted least deviations. This method efficiently handles both linear and nonlinear patterns in data.
-
----
-
-## Steps of the Algorithm
-
-### 1. Initialization
-- **Input**:
-  - Time series data $S = \{S_t \in \mathbb{R}^n\}_{t \in T}$.
-  - Gradient function $\nabla \mathcal{L}$.
-  - Historical observations $\{y_t\}_{t=1-m}^T$.
-- **Weights**:
-  - Initialize $p_t = 1$ for all $t \in \{1, 2, \ldots, T\}$.
-
----
-![image](https://github.com/user-attachments/assets/be0299a1-862b-4b21-8622-bfdb27ce593f)
-
----
-
-### 5. Convergence Check
-- The algorithm terminates when $A^{(k)} \approx A^{(k-1)}$, ensuring the parameters have converged.
-
----
-
-### 6. Output
-- The final coefficients $A^{(k)}$ and auxiliary variables $z^{(k)}$ are returned.
-
----
-
-## Key Features
-- **Dynamic Weights**: The algorithm adjusts weights $p_t$ to reduce the impact of outliers.
-- **Iterative Refinement**: Repeated adjustments improve accuracy and robustness.
-- **Nonlinear Data Handling**: Capable of modeling complex, nonlinear patterns.
-
----
-
-## Applications
-- Time series forecasting with complex dynamics.
-- Scenarios where robustness against outliers is essential.
-- High-accuracy modeling and forecasting tasks.
-
-
-
-
-# Numerical Example of Generalized Least Deviation Method (GLDM)
-
-![image](https://github.com/user-attachments/assets/3026b504-2e73-44bd-99fe-0b7350d1d04f)
-
-![image](https://github.com/user-attachments/assets/52332c66-d39f-460d-ad25-f97c16542fc4)
-
-![image](https://github.com/user-attachments/assets/5e5c92ed-7bea-4072-9eb3-9f9765c69c08)
-
-![WLDM](https://github.com/user-attachments/assets/b6d66552-70be-4d27-ac5b-479eefe36991)
-
-![image](https://github.com/user-attachments/assets/a21e85fb-b925-41dc-894a-eba76104523a)
-
-![image](https://github.com/user-attachments/assets/a0e6a9f5-d161-4ed3-99ce-e555dec9f3e4)
-
-![image](https://github.com/user-attachments/assets/66c97dc6-8fa5-40b8-8640-890d5fcb86dc)
-
-![image](https://github.com/user-attachments/assets/b4536189-75ef-451c-8eaa-6bf9a1b98e8b)
-
-![image](https://github.com/user-attachments/assets/bb99b01a-599a-4957-8d07-0284cc327e3e)
-
-![image](https://github.com/user-attachments/assets/15902adb-f957-47de-ab4b-eba867e0d5bb)
-
-![image](https://github.com/user-attachments/assets/23861045-1611-4b4e-8337-227a86eb21b3)
-
-![image](https://github.com/user-attachments/assets/0e8a7136-aaf5-435a-87d1-ec7dadc6d9fc)
 
 ![image](https://github.com/user-attachments/assets/1a785a15-5b78-42cb-b8b6-3e1d154cb6a8)
-
-
-
-
-
 
 ## License
 © 2024 Author: Mostafa Abotaleb
